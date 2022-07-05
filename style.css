@@ -1,0 +1,60 @@
+*{
+    box-sizing: border-box;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.body{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.mainContainer{
+   max-width: 600px;
+  
+   margin: 0 auto;
+   margin-top: 100px;
+   border: 2px solid black;
+   border-radius: 10px;
+   background-color:antiquewhite;
+}
+.screen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons{
+   margin: 10px;
+   margin-left: 30px;
+   margin-right: 30px;
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);;
+    gap: 10px;
+}
+
+.button{
+    background-color: rgba(71, 68, 68, 0.5);
+    border-radius: 10px;
+    font-size:xx-large
+}
+input{
+    margin-top: 20px;
+    border-radius: 10px;
+    min-width: 200px;
+    min-height: 50px;
+    font-size: large;
+}
+
+.speClear{
+grid-column: span 3;
+}
+.speEqual{
+grid-column: span 3;
+}
