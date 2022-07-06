@@ -54,7 +54,24 @@ input{
 
 .speClear{
 grid-column: span 3;
+background-color: orange;
 }
-.speEqual{
+.speZero{
 grid-column: span 3;
+}
+
+#screen{
+    min-width:25px;
+    min-height: 80px;
+    border: solid black;
+    background-color: burlywood;
+    margin: 25px;
+    padding: 20px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    font-size: x-large;
+
 }

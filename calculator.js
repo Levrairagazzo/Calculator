@@ -1,10 +1,12 @@
-let firstOperand = '0';
-let secondOperand = '0';
+let firstOperand = '';
+let secondOperand = '';
 let operator = null;
 
-function resetOperands(){
-    firstOperand = '0';
-    secondOperand = '0';
+
+function reset(){
+    firstOperand = '';
+    secondOperand = '';
+    operator = null;
 }
 
 function appendDigit(digit, currentOperand){
@@ -14,7 +16,7 @@ function appendDigit(digit, currentOperand){
 
 
 function add(numberOne, numberTwo){
-    return numberOne + numberTwo
+    return numberOne + numberTwo;
 }
 function divise(numberOne, numberTwo){
     return numberOne / numberTwo
@@ -86,5 +88,32 @@ function isDigit(myChar){
     
       return !isNaN(myChar);
 }
+
+function pickOperator(operator){
+
+}
+
+
+function appendToFirst(digit){
+    firstOperand += digit;
+    return firstOperand;
+}
+
+function appendToSecond(digit){
+    secondOperand += digit;
+    return secondOperand;
+}
+
+function displayDigit(digit){
+    const container = document.getElementById('screen');
+    container.innerHTML += digit;
+
+    
+
+}
+display();
+
+
+console.log(appendToSecond(6))
 
 calculate(input);
