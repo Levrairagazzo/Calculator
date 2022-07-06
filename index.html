@@ -15,22 +15,22 @@
             
         </div>
         <div class="buttons">
-            <button class="button speClear" onclick="reset()">C</button>
-                <button class="button" onclick="">*</button>
-                <button class="button" onclick="displayDigit('7')">7</button>
-                <button class="button" onclick="displayDigit('8')">8</button>
-                <button class="button" onclick="displayDigit('9')">9</button>
-                <button class="button">/</button>
-                <button class="button" onclick="displayDigit('4')">4</button>
-                <button class="button" onclick="displayDigit('5')">5</button>
-                <button class="button" onclick="displayDigit('6')">6</button>
-                <button class="button">-</button>
-                <button class="button" onclick="displayDigit('1')">1</button>
-                <button class="button" onclick="displayDigit('2')">2</button>
-                <button class="button"  onclick="displayDigit('3')">3</button>
-                <button class="button">+</button>
-                <button class="button speZero" onclick="displayDigit('0')">0</button>
-                <button class="button">=</button>
+            <button class="button speClear" onclick="resetValues();resetScreen()">C</button>
+                <button class="button"  onclick="addToScreen('*')">*</button>
+                <button class="button" onclick="addToScreen('7')">7</button>
+                <button class="button" onclick="addToScreen('8')">8</button>
+                <button class="button" onclick="addToScreen('9')">9</button>
+                <button class="button" onclick="addToScreen('/')">/</button>
+                <button class="button" onclick="addToScreen('4')">4</button>
+                <button class="button" onclick="addToScreen('5')">5</button>
+                <button class="button" onclick="addToScreen('6')">6</button>
+                <button class="button"  onclick="addToScreen('-')">-</button>
+                <button class="button" onclick="addToScreen('1')">1</button>
+                <button class="button" onclick="addToScreen('2')">2</button>
+                <button class="button"  onclick="addToScreen('3')">3</button>
+                <button class="button"  onclick="addToScreen('+')">+</button>
+                <button class="button speZero" onclick="addToScreen('0')">0</button>
+                <button class="button" onclick="pressEqual()">=</button>
                 
                 
         </div>

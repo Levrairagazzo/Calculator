@@ -1,19 +1,20 @@
-let firstOperand = '';
-let secondOperand = '';
+let screenVal = "";
 let operator = null;
+let savedVal = "";
 
 
-function reset(){
-    firstOperand = '';
-    secondOperand = '';
+function resetValues(){
+    // resetScreen();
+     screenVal = "";
     operator = null;
+    savedVal = "";
+
 }
 
-function appendDigit(digit, currentOperand){
-    currentOperand = currentOperand + digit;
-    return currentOperand; 
+function resetScreen(){
+    const container = document.getElementById('screen');
+    container.innerHTML = '';
 }
-
 
 function add(numberOne, numberTwo){
     return numberOne + numberTwo;
@@ -32,8 +33,10 @@ function subtract(numberOne, numberTwo){
 }
 
 function operate(numberOne, numberTwo, operator){
+    numberOne = parseInt(numberOne);
+    numberTwo = parseInt(numberTwo);
     switch(operator) {
-        case "X":
+        case "*":
           return multiply(numberOne,numberTwo);
           break;
         case "-":
@@ -53,29 +56,6 @@ function operate(numberOne, numberTwo, operator){
 
 ///---------------------------------------------------
 
-let input = '15+95';
-
-function calculate(strInput){
-    let operand1 = '',operand2 = '',operator = '';
-
-    let pointer = 0;
-
-    while(isDigit(strInput[pointer]) === true ){
-        operand1 += strInput[pointer];
-        pointer ++;
-    }
-    console.log(operand1);
-    operator = strInput[pointer];
-    pointer++;
-    console.log(operator);
-
-    while(isDigit(strInput[pointer]) === true ){
-        operand2 += strInput[pointer];
-        pointer ++;
-    }
-    console.log(operand2);
-    
-}
 
 function isDigit(myChar){
     if (typeof myChar !== 'string') {
@@ -89,31 +69,37 @@ function isDigit(myChar){
       return !isNaN(myChar);
 }
 
-function pickOperator(operator){
 
-}
-
-
-function appendToFirst(digit){
-    firstOperand += digit;
-    return firstOperand;
-}
-
-function appendToSecond(digit){
-    secondOperand += digit;
-    return secondOperand;
-}
-
-function displayDigit(digit){
+function addToScreen(input){
     const container = document.getElementById('screen');
-    container.innerHTML += digit;
-
-    
+    if(isDigit(input)){
+    container.innerHTML += input;
+    screenVal += input;
+    } else {
+        selectOperator(input);
+    }
 
 }
-display();
 
+function selectOperator(newOperator){
+    
+        operator = newOperator;
+        if(savedVal === '')
+            savedVal = screenVal;
+        screenVal = '';
+        resetScreen();
 
-console.log(appendToSecond(6))
+}
 
-calculate(input);
+function pressEqual(){
+    console.log("hello");
+    const container = document.getElementById('screen');
+    let result = operate(savedVal,screenVal,operator);
+    resetValues();
+    console.log("hello");
+    container.innerHTML = result;
+    savedVal = result.toString();
+    console.log("hello");
+    console.log(savedVal);
+
+}
